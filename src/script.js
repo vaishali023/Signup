@@ -4,6 +4,13 @@ const lastname = document.getElementById('lastname');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('re-pass');
+const requiredErrors = {
+  'firstname' : 'First Name',
+  'lastname' : 'Last Name',
+  'email' : 'Email',
+  'password' : 'Password',
+  're-pass' : 'Re-enter Password'
+}
 
 //show input error message
 function showError(input, message){
@@ -66,7 +73,7 @@ function checkLength(input, min, max) {
   
   // Get fieldname
   function getFieldName(input) {
-    return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+    return requiredErrors[input.id]
   }
   
   // Event listeners
